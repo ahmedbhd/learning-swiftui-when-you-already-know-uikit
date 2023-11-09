@@ -9,11 +9,11 @@ import SwiftUI
 
 extension VerticalAlignment {
     enum AccountAndName: AlignmentID {
-        static func defaultValue(in d: ViewDimensions) -> CGFloat {
-            d[.top]
+        static func defaultValue(in context: ViewDimensions) -> CGFloat {
+            context[.top]
         }
     }
-
+    
     static let accountAndName = VerticalAlignment(AccountAndName.self)
 }
 
@@ -22,25 +22,34 @@ struct AdvancedLayoutView: View {
         HStack(alignment: .accountAndName) {
             VStack {
                 Text("@v_pradeilles")
-                    .alignmentGuide(.accountAndName) { d in d[.firstTextBaseline] }
+                    .alignmentGuide(.accountAndName) { d in
+                        d[VerticalAlignment.center]
+                    }
+                    .padding()
+                    .background(.blue)
+                
                 Image("vincent")
                     .resizable()
                     .frame(width: 64, height: 64)
+                    .background(.yellow)
             }
-
+            
             VStack {
-                Text("Full Name:")
+                Text("full name:")
+                    .background(.red)
+                
                 Text("Vincent Pradeilles")
+                    .alignmentGuide(.accountAndName) { d in
+                        d[VerticalAlignment.center]
+                    }
                     .font(.largeTitle)
-                    .alignmentGuide(.accountAndName) { d in d[.firstTextBaseline] }
-
+                    .padding()
+                    .background(.green)
             }
         }
     }
 }
 
-struct AdvancedLayoutView_Previews: PreviewProvider {
-    static var previews: some View {
-        AdvancedLayoutView()
-    }
+#Preview {
+    AdvancedLayoutView()
 }

@@ -10,56 +10,59 @@ import SwiftUI
 struct ContentView: View {
     
     @AppStorage("shouldDisplayAnimation")
-    var shouldDisplayAnimation: Bool = true
+    var shouldDisplayAnimation = true
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading) {
+            VStack {
                 images
+                
                 VStack(alignment: .leading) {
                     Text("title")
                         .font(.headline)
+                    
                     Text("subtitle")
                         .font(.subheadline)
-                    rating
+                    
+                    ratings
+                    
+                    Text("description")
+                        .font(.body)
                 }
-                Divider()
-                Text("description")
-                    .font(.body)
             }
             .padding()
         }
     }
     
-    var images: some View {
+    private var images: some View {
         ScrollViewReader { proxy in
             ScrollView(.horizontal) {
                 HStack {
                     Image("cover")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .scaledToFit()
                         .frame(height: 350)
                         .id("cover")
-                    ForEach(0..<3) { i in
-                        Image("image-\(i)")
+                    
+                    ForEach(0 ..< 3) { item in
+                        Image("image-\(item)")
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
+                            .scaledToFit()
                             .frame(height: 350)
-                            .id("image-\(i)")
+                            .id("image-\(item)")
                     }
                 }
             }.onAppear {
                 guard shouldDisplayAnimation else { return }
-                defer { shouldDisplayAnimation = false }
-                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     withAnimation {
-                        proxy.scrollTo("image-0", anchor: .leading)
+                        proxy.scrollTo("image-0", anchor: .trailing)
                     }
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                         withAnimation {
                             proxy.scrollTo("cover")
+                            shouldDisplayAnimation = false
                         }
                     }
                 }
@@ -67,27 +70,19 @@ struct ContentView: View {
         }
     }
     
-    var rating: some View {
+    private var ratings: some View {
         HStack(spacing: 0) {
-            Image(systemName: "star.fill")
-                .foregroundColor(.yellow)
-            Image(systemName: "star.fill")
-                .foregroundColor(.yellow)
-            Image(systemName: "star.fill")
-                .foregroundColor(.yellow)
-            Image(systemName: "star.fill")
-                .foregroundColor(.yellow)
-            Image(systemName: "star.leadinghalf.fill")
-                .foregroundColor(.yellow)
+            ForEach(0 ..< 5) { item in
+                Image(systemName: "star.fill")
+                    .foregroundColor(.yellow)
+            }
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .onAppear {
-                UserDefaults.standard.removeObject(forKey: "shouldDisplayAnimation")
-            }
-    }
+#Preview {
+    ContentView()
+        .onAppear {
+            UserDefaults.standard.removeObject(forKey: "shouldDisplayAnimation")
+        }
 }

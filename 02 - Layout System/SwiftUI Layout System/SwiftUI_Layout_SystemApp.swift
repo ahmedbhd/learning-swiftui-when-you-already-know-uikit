@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUI_Layout_SystemApp: App {
     var body: some Scene {
         WindowGroup {
-            AdvancedLayoutView()
+            ContentView()
         }
     }
 }
