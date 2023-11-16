@@ -11,8 +11,6 @@ class TodoItemsListViewModel: ObservableObject {
     @Published var todoItems: [TodoItem] = []
     
     func loadItems() {
-        guard todoItems.isEmpty else { return }
-        
         do {
             self.todoItems = try .fromJSON(named: "TodoItems")
         } catch {

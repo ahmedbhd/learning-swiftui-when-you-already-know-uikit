@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct TodoItemRow: View {
-    
     @Binding var item: TodoItem
     
     var body: some View {
         HStack {
             TodoToggleButton(state: $item.isDone)
-                .frame(width: 40, height: 40)
+            
             VStack(alignment: .leading) {
                 Text(item.title)
                     .font(.headline)
@@ -27,36 +26,33 @@ struct TodoItemRow: View {
                 }
             }
             .padding(.leading)
-            
-            Spacer()
+            .frame(maxWidth: .infinity, alignment: .leading)
+            //            Spacer()
         }
         .padding()
     }
 }
 
 struct TodoItemRow_Previews: PreviewProvider {
-    
-    static let todoItemWithoutDescription = TodoItem(
-        id: UUID(),
-        title: "Buy some bread 🥖"
-    )
-    
-    static let todoItemWithDescription = TodoItem(
-        id: UUID(),
-        title: "Buy some milk 🥛",
-        description: "Get a lactose free one"
-    )
-    
     static var previews: some View {
         Group {
-            TodoItemRow(item: .constant(todoItemWithoutDescription))
+            StatefulPreviewWrapper(todoItemWithoutDescription) { todoItem in
+                TodoItemRow(item: todoItem)
+            }
                 .previewDisplayName("Without Description")
             
             StatefulPreviewWrapper(todoItemWithDescription) { todoItem in
                 TodoItemRow(item: todoItem)
             }
             .previewDisplayName("With Description")
+            
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }
 }
+
+private let todoItemWithoutDescription = TodoItem(id: UUID(),
+                                                  title: "Buy some bread 🥖")
+private let todoItemWithDescription = TodoItem(id: UUID(),
+                                               title: "Buy some milk 🥤",
+                                               description: "Get a lactose free one")

@@ -12,6 +12,7 @@ struct TodoToggleButton: View {
     @Binding var state: Bool
     
     var body: some View {
+        
         Button {
             withAnimation {
                 state.toggle()
@@ -31,15 +32,13 @@ struct TodoToggleButton: View {
                 }
             }
         }
-        .scaledToFit()
+        .frame(width: 40, height: 40)
     }
 }
 
-struct TodoToggleButton_Previews: PreviewProvider {
-    static var previews: some View {
-        StatefulPreviewWrapper(false) { state in
-            TodoToggleButton(state: state)
-//                .previewLayout(.fixed(width: 100, height: 100))
-        }
+#Preview {
+    StatefulPreviewWrapper(true) { state in
+        TodoToggleButton(state: state)
+        //                .previewLayout(.fixed(width: 100, height: 100))
     }
 }
