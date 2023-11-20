@@ -9,12 +9,12 @@ import SwiftUI
 
 extension Binding {
     func whenEmpty<Wrapped>(_ defaultValue: Wrapped) -> Binding<Wrapped> where Value == Wrapped? {
-        Binding<Wrapped>(
-            get: { wrappedValue ?? defaultValue },
-            set: { wrappedValue = $0 }
-        )
+        Binding<Wrapped> {
+            wrappedValue ?? defaultValue
+        } set: { wrappedValue = $0 }
+
     }
-        
+    
     func onNewValue(_ sideEffect: @escaping () -> Void) -> Binding<Value> {
         Binding(
             get: { wrappedValue },
