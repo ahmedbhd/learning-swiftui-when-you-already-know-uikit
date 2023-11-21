@@ -18,6 +18,8 @@ struct SwiftUI_Advanced_Data_FlowApp: App {
                         Image(systemName: "1.circle.fill")
                         Text("One")
                     }
+                    .environment(\.analytics, MockAnalytics())
+                
                 SecondFeatureView()
                     .tabItem {
                         Image(systemName: "2.circle.fill")
@@ -27,6 +29,12 @@ struct SwiftUI_Advanced_Data_FlowApp: App {
                     .tabItem {
                         Image(systemName: "3.circle.fill")
                         Text("Three")
+                    }
+                
+                LoginView()
+                    .tabItem {
+                        Image(systemName: "person.circle.fill")
+                        Text("Login")
                     }
             }
         }

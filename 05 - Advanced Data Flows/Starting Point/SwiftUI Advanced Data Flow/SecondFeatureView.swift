@@ -9,8 +9,13 @@ import SwiftUI
 
 struct SecondFeatureView: View {
     
+    @Environment(\.analytics) var analytics: Analytics // Only use @Envirement inside a View
+    
     var body: some View {
         Text("Feature n°2️⃣")
+            .onAppear {
+                analytics.send(tag: "Feature_01")
+            }
     }
 }
 

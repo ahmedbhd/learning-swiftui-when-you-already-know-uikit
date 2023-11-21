@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct FirstFeatureView: View {
-        
+    
+//    @EnvironmentObject
+    
+    @Environment(\.analytics) var analytics: Analytics // Use this approach when you don't need to inject and ObservableObject
+   
     var body: some View {
         Text("Feature n°1️⃣")
+            .onAppear {
+                analytics.send(tag: "Feature_01")
+            }
     }
 }
 
-struct FirstFeature_Previews: PreviewProvider {
-    static var previews: some View {
-        FirstFeatureView()
-    }
+#Preview {
+    FirstFeatureView()
 }

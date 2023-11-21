@@ -3,10 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		781122B32B0CC19E00CCAEA3 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781122B22B0CC19E00CCAEA3 /* Analytics.swift */; };
+		781122B62B0CC7B000CCAEA3 /* EnvironmentKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781122B42B0CC49100CCAEA3 /* EnvironmentKeys.swift */; };
+		781122B82B0CCA5C00CCAEA3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781122B72B0CCA5C00CCAEA3 /* LoginView.swift */; };
+		781122BA2B0CCB4900CCAEA3 /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781122B92B0CCB4900CCAEA3 /* ParentView.swift */; };
+		781122BC2B0CCB5B00CCAEA3 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781122BB2B0CCB5B00CCAEA3 /* ChildView.swift */; };
+		781122BE2B0CCC0E00CCAEA3 /* PreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781122BD2B0CCC0E00CCAEA3 /* PreferenceKeys.swift */; };
+		781122C02B0CF5CD00CCAEA3 /* SyncingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781122BF2B0CF5CD00CCAEA3 /* SyncingView.swift */; };
 		BF5B421626E3A7D300890875 /* SwiftUI_Advanced_Data_FlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B421526E3A7D300890875 /* SwiftUI_Advanced_Data_FlowApp.swift */; };
 		BF5B421A26E3A7D600890875 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5B421926E3A7D500890875 /* Assets.xcassets */; };
 		BF5B421D26E3A7D600890875 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF5B421C26E3A7D600890875 /* Preview Assets.xcassets */; };
@@ -16,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		781122B22B0CC19E00CCAEA3 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		781122B42B0CC49100CCAEA3 /* EnvironmentKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentKeys.swift; sourceTree = "<group>"; };
+		781122B72B0CCA5C00CCAEA3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		781122B92B0CCB4900CCAEA3 /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
+		781122BB2B0CCB5B00CCAEA3 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
+		781122BD2B0CCC0E00CCAEA3 /* PreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeys.swift; sourceTree = "<group>"; };
+		781122BF2B0CF5CD00CCAEA3 /* SyncingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncingView.swift; sourceTree = "<group>"; };
 		BF5B421226E3A7D300890875 /* SwiftUI Advanced Data Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI Advanced Data Flow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5B421526E3A7D300890875 /* SwiftUI_Advanced_Data_FlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_Advanced_Data_FlowApp.swift; sourceTree = "<group>"; };
 		BF5B421926E3A7D500890875 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,9 +74,16 @@
 				BF5B422426E3A83000890875 /* FirstFeatureView.swift */,
 				BF5B422626E3A84400890875 /* SecondFeatureView.swift */,
 				BF5B422826E3A86500890875 /* ThirdFeatureView.swift */,
+				781122B42B0CC49100CCAEA3 /* EnvironmentKeys.swift */,
+				781122B22B0CC19E00CCAEA3 /* Analytics.swift */,
+				781122B72B0CCA5C00CCAEA3 /* LoginView.swift */,
+				781122B92B0CCB4900CCAEA3 /* ParentView.swift */,
+				781122BB2B0CCB5B00CCAEA3 /* ChildView.swift */,
+				781122BD2B0CCC0E00CCAEA3 /* PreferenceKeys.swift */,
 				BF5B421926E3A7D500890875 /* Assets.xcassets */,
 				BF5B421E26E3A7D600890875 /* Info.plist */,
 				BF5B421B26E3A7D600890875 /* Preview Content */,
+				781122BF2B0CF5CD00CCAEA3 /* SyncingView.swift */,
 			);
 			path = "SwiftUI Advanced Data Flow";
 			sourceTree = "<group>";
@@ -101,8 +122,9 @@
 		BF5B420A26E3A7D300890875 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					BF5B421126E3A7D300890875 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -144,9 +166,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				781122BA2B0CCB4900CCAEA3 /* ParentView.swift in Sources */,
+				781122C02B0CF5CD00CCAEA3 /* SyncingView.swift in Sources */,
 				BF5B422926E3A86500890875 /* ThirdFeatureView.swift in Sources */,
+				781122BE2B0CCC0E00CCAEA3 /* PreferenceKeys.swift in Sources */,
+				781122B82B0CCA5C00CCAEA3 /* LoginView.swift in Sources */,
 				BF5B422526E3A83000890875 /* FirstFeatureView.swift in Sources */,
+				781122B62B0CC7B000CCAEA3 /* EnvironmentKeys.swift in Sources */,
+				781122BC2B0CCB5B00CCAEA3 /* ChildView.swift in Sources */,
 				BF5B422726E3A84400890875 /* SecondFeatureView.swift in Sources */,
+				781122B32B0CC19E00CCAEA3 /* Analytics.swift in Sources */,
 				BF5B421626E3A7D300890875 /* SwiftUI_Advanced_Data_FlowApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +187,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -191,6 +221,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -219,6 +250,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -252,6 +284,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -277,15 +310,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI Advanced Data Flow/Preview Content\"";
-				DEVELOPMENT_TEAM = 2937XWQ9VF;
+				DEVELOPMENT_TEAM = 3X5C5YGPN7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "SwiftUI Advanced Data Flow/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "vincent.SwiftUI-Advanced-Data-Flow";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bhd.SwiftUI-Advanced-Data-Flow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -299,15 +332,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI Advanced Data Flow/Preview Content\"";
-				DEVELOPMENT_TEAM = 2937XWQ9VF;
+				DEVELOPMENT_TEAM = 3X5C5YGPN7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "SwiftUI Advanced Data Flow/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "vincent.SwiftUI-Advanced-Data-Flow";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bhd.SwiftUI-Advanced-Data-Flow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
