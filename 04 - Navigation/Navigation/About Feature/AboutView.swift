@@ -13,23 +13,21 @@ struct AboutView: View {
     
     var body: some View {
         VStack {
-            Text("This app was made during\na SwiftUI course 👨‍🎓🧑‍🎓")
+            Text("This app was made during\na SwiftUI course 👮👮")
                 .multilineTextAlignment(.center)
                 .padding()
             
             Button("More info?") {
-                isMoreInfoPresented = true
+                isMoreInfoPresented.toggle()
             }
         }
         .sheet(isPresented: $isMoreInfoPresented) {
             MoreInfoView()
-                .presentationDetents([.fraction(0.25), .medium, .large])
+                .presentationDetents([.medium, .large, .fraction(0.8)])
         }
     }
 }
 
-struct AboutView_Previews: PreviewProvider {
-    static var previews: some View {
-        AboutView()
-    }
+#Preview {
+    AboutView()
 }

@@ -17,7 +17,7 @@ struct ParentView: View {
     @State var selectedTab: Tab = .todos
 
     var body: some View {
-        TabView(selection: $selectedTab) {
+        TabView(selection: $selectedTab) { // Use navigations inside tabBar not the opposite (iOS guide lines)
             TodoItemsListView()
                 .tabItem {
                     Image(systemName: "list.bullet")
