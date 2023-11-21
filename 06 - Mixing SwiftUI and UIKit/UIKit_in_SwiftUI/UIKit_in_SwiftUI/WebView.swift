@@ -12,7 +12,7 @@ import WebKit
 struct WebView: UIViewRepresentable {
     
     let url: URL
-    var navigationPolicy: ((WKNavigationAction) -> WKNavigationActionPolicy)? = nil
+    var navigationPolicy: ((WKNavigationAction) -> WKNavigationActionPolicy)?
     
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
@@ -25,13 +25,13 @@ struct WebView: UIViewRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        Coordinator(parent: self)
     }
     
     class Coordinator: NSObject, WKNavigationDelegate {
         var parent: WebView
         
-        init(_ parent: WebView) {
+        init(parent: WebView) {
             self.parent = parent
         }
         
@@ -47,7 +47,7 @@ struct WebView: UIViewRepresentable {
 
 extension WebView {
     func set(navigationPolicy: @escaping (WKNavigationAction) -> WKNavigationActionPolicy) -> WebView {
-        var copy = self
+        var copy = self // A patern to mutate a struct from a non mutatin method
         copy.navigationPolicy = navigationPolicy
         return copy
     }

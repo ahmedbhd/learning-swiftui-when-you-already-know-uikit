@@ -13,12 +13,10 @@ struct ContentView: View {
             .set(navigationPolicy: { navigationAction in
                 navigationAction.navigationType == .linkActivated ? .cancel : .allow
             })
-        .padding()
+            .padding()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }
