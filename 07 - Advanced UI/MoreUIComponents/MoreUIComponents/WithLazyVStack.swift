@@ -10,7 +10,7 @@ import SwiftUI
 struct WithLazyVStack: View {
     var body: some View {
         ScrollView {
-            LazyVStack {
+            LazyVStack { // TLDR: Only use when you are displaying large number of items and good part of them is off screen intially
                 ForEach(0..<10_000) { i in
                     HStack {
                         let _ = print("VStack Item \(i)")

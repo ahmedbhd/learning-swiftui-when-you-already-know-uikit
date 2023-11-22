@@ -10,7 +10,7 @@ import SwiftUI
 struct WithGridView: View {
     var body: some View {
         let rows: [GridItem] = (1...10).map { _ in
-            GridItem(.fixed(50), spacing: 16)
+            GridItem(.fixed(100), spacing: 16)
         }
         
         ScrollView([.horizontal, .vertical]) {
@@ -31,8 +31,6 @@ struct WithGridView: View {
     }
 }
 
-struct WithGridView_Previews: PreviewProvider {
-    static var previews: some View {
-        WithGridView()
-    }
+#Preview{
+    WithGridView()
 }

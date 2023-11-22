@@ -22,8 +22,6 @@ struct WithListView: View {
     }
 }
 
-struct WithListView_Previews: PreviewProvider {
-    static var previews: some View {
-        WithListView()
-    }
+#Preview {
+    WithListView()
 }
